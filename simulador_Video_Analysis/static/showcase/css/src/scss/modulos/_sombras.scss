@@ -1,0 +1,25 @@
+@mixin sombra-basica {
+	@include box-shadow($color-sombra 0px 1px 1px);
+}
+
+@mixin resplandor {
+	@include box-shadow($color-resplandor 0px 0px 1px inset);
+}
+
+@mixin sombra-resplandor {
+	@include box-shadow($color-sombra 0px 1px 1px, $color-resplandor 0px 0px 1px inset);
+}
+
+@mixin sombra-interior {
+	@include box-shadow($color-sombra 0px 1px 1px inset);
+}
+
+@mixin sombra-texto {
+	@include text-shadow(0px 1px 1px $color-sombra-texto);
+}
+
+@mixin sombra-interior-texto {
+	@include text-shadow(0px 2px 3px $color-sombra);
+	@include background-clip(text);
+}
+	

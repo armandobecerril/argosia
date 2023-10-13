@@ -1,0 +1,132 @@
+.sentimental-analysis {
+  width: 100%;
+  text-align: center;
+  .col-sentiment {
+    display: inline-block;
+    margin: 10px 5px;
+    .emoji {
+
+    }
+    .bar {
+      width: 64px;
+      height: 220px;
+      background-color: lighten($corduroy, 52);
+      position: relative;
+      .level {
+        width: 100%;
+        background-color: $corduroy;
+        position: absolute;
+        bottom: 0;
+      }
+    }
+    .feeling {
+      display: block;
+      padding: 10px 0;
+      font-size: 10px;
+      text-align: center;
+      font-family: $fuente-bold;
+    }
+    .percentage {
+      text-align: center;
+      font-family: $fuente-bold;
+    }
+    &.golden-grass {
+      .emoji {
+        color: $golden-grass;
+      }
+      .level {
+        background-color: $golden-grass;
+      }
+      .feeling {
+        color: $golden-grass;
+      }
+      .percentage {
+        color: $golden-grass;
+      }
+    }
+    &.corn {
+      .emoji {
+        color: $corn;
+      }
+      .level {
+        background-color: $corn;
+      }
+      .feeling {
+        color: $corn;
+      }
+      .percentage {
+        color: $corn;
+      }
+    }
+    &.flame-pea {
+      .emoji {
+        color: $flame-pea;
+      }
+      .level {
+        background-color: $flame-pea;
+      }
+      .feeling {
+        color: $flame-pea;
+      }
+      .percentage {
+        color: $flame-pea;
+      }
+    }
+    &.sycamore {
+      .emoji {
+        color: $sycamore;
+      }
+      .level {
+        background-color: $sycamore;
+      }
+      .feeling {
+        color: $sycamore;
+      }
+      .percentage {
+        color: $sycamore;
+      }
+    }
+    &.sea-green {
+      .emoji {
+        color: $sea-green;
+      }
+      .level {
+        background-color: $sea-green;
+      }
+      .feeling {
+        color: $sea-green;
+      }
+      .percentage {
+        color: $sea-green;
+      }
+    }
+    &.eastern-blue {
+      .emoji {
+        color: $eastern-blue;
+      }
+      .level {
+        background-color: $eastern-blue;
+      }
+      .feeling {
+        color: $eastern-blue;
+      }
+      .percentage {
+        color: $eastern-blue;
+      }
+    }
+    &.matisse {
+      .emoji {
+        color: $matisse;
+      }
+      .level {
+        background-color: $matisse;
+      }
+      .feeling {
+        color: $matisse;
+      }
+      .percentage {
+        color: $matisse;
+      }
+    }
+  }
+}

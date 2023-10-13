@@ -1,0 +1,51 @@
+.alert {
+	text-shadow:none;
+	@include transicion-rapida();
+	border:none;
+	box-shadow: none;
+	padding: 0 15px;
+	height: 0;
+	overflow: hidden;
+	//background-image: url(../img/textura.png);
+	background-repeat: repeat;
+	margin-bottom: 0px;
+	border-radius:0;
+
+	&.on {
+		padding: 15px;
+		height: auto;
+		margin-top: 20px;
+		//margin-bottom: 20px;
+	}
+
+	p {
+		font-size: 14px;
+		background-color: transparent !important;
+	}
+
+	&.alert-success {
+		background-color: rgba($verde-alerta, $opacidad-20);
+		border-bottom: 1px solid rgba($verde-alerta, 0);
+
+		&.on {
+			border-bottom: 1px solid $verde-alerta;
+		}
+
+		p {
+			color: $verde-alerta !important;
+		}
+	}
+
+	&.alert-danger {
+		background-color: rgba($rojo-alerta, $opacidad-20);
+		border-bottom: 1px solid rgba($rojo-alerta, 0);
+
+		&.on {
+			border-bottom: 1px solid $rojo-alerta;
+		}
+
+		p {
+			color: $rojo-alerta !important;
+		}
+	}
+}

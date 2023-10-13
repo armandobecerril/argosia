@@ -1,0 +1,14 @@
+.bg-isotype {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 1024px;
+  z-index: 0;
+  transform: translateX(50%);
+  cursor-pointer:none;
+  .linea {
+    fill:none;
+    stroke-width:1;
+    stroke: lighten($corduroy, 52);
+  }
+}

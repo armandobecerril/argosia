@@ -1,0 +1,23 @@
+#mapa {
+  height: 700px;
+
+  > div {
+    width: 100%;
+  	display: block;
+  	pointer-events: none;
+  	position: relative;
+
+    &.clicked {
+      pointer-events: auto;
+    }
+  }
+
+  h3 {
+    text-transform: uppercase;
+  }
+
+  p {
+    font-family: $fuente-light, sans-serif;
+    color: $light-gray;
+  }
+}

@@ -1,0 +1,19 @@
+@mixin transicion-muy-lenta {
+	transition: all ease-in-out 1s;
+}
+
+@mixin transicion-lenta {
+	transition: all ease-in-out 0.6s;
+}
+
+@mixin transicion-basica {
+	transition: all ease-in-out 0.2s;
+}
+
+@mixin transicion-rapida {
+	transition: all ease-in-out 0.12s;
+}
+
+@mixin transicion-muy-rapida {
+	transition: all ease-in-out 0.08s;
+}

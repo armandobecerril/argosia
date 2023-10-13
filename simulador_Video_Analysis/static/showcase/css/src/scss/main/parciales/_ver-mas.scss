@@ -1,0 +1,19 @@
+.ver-mas {
+  color: $orange;
+  display: inline-block;
+  border: solid $orange 1px;
+  border-radius: 3px;
+  padding: 5px 24px;
+  height: 28px;
+  line-height: 28px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-family: $fuente-medium, sans-serif;
+
+  &:hover {
+    background-color: $orange;
+    color: white;
+    text-decoration: none;
+    padding: 5px 30px;
+  }
+}

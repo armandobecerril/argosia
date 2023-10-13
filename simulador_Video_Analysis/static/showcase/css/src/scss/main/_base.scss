@@ -1,0 +1,14 @@
+// Compass
+
+//@import "compass";
+
+//@import "bootstrap-sprockets";
+//@import "bootstrap";
+
+.redonda {
+	border-radius:0px 10px 0px 0px !important;
+
+	&:focus {
+		border-radius:0px 15px 0px 0px !important;
+	}
+}

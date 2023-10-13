@@ -1,0 +1,207 @@
+{% extends 'base.html' %}   
+{% block content %}
+
+
+  <div class="cajaVideo">
+    <!--      ///////////////////////////////////////////  -->        
+     <video class="videoBox" autoplay id="videoBoxPlace"> </video>
+    <!--      ///////////////////////////////////////////      -->    
+  </div>
+
+<br>
+
+<div class="cajaTabla">
+      <table>
+        <tr>
+          <td colspan="3" align="center"> CLASS </td>
+          <td align="center"> ACCURACY </td>
+        </tr>
+        <tr>
+          <td align="center" id = "violencia"> 
+            <img class="gris" src="static/img/crimen.png" title="violence">
+          </td>
+          <td align="center" id = "sospecha">
+            <img class="gris" src="static/img/alerta.png" title="suspicious">
+          </td>
+          <td align="center" id = "safe">
+            <img class="gris" src="static/img/ok.png" title="safe"> </img>
+          </td>
+          <td id='acc' align="center" rowspan="2">
+          </td>
+        </tr>
+        <tr>
+          <td align="center"> Crime</td>
+          <td align="center"> Suspicious</td>
+          <td align="center"> Safe</td>
+        </tr>
+      </table>
+</div> 
+
+
+<div class="linea"></div>
+<br>
+
+<script type="text/javascript">
+	console.log("estoy en index.....");
+	var video_name = "{{nameVideo}}";
+	console.log(video_name);
+	var videoBoxPlace=document.getElementById("videoBoxPlace");
+	var clase_global = document.getElementById("final_class");
+
+	var violencia = document.getElementById("violencia");
+	var sospecha = document.getElementById("sospecha");
+	var safe = document.getElementById("safe");
+
+
+	/*var clase_ok = "<img class='ok' src='{{ url_for('static', filename='img/ok.png') }}'></img>";*/
+
+	var clase_crimen = "<img class='violencia' src='{{ url_for('static', filename='img/crimen.png') }}'></img><img class='sospecha_gris' src='{{ url_for('static', filename='img/alerta.png') }}'></img><img class='ok_gris' src='{{ url_for('static', filename='img/ok.png') }}'></img> <p class='img_tag'> Crime &nbsp &nbsp Suspicious &nbsp &nbsp  Safe </p>";
+
+	var clase_ok = "<img class='violencia_gris' src='{{ url_for('static', filename='img/crimen.png') }}'></img><img class='sospecha_gris' src='{{ url_for('static', filename='img/alerta.png') }}'></img><img class='ok' src='{{ url_for('static', filename='img/ok.png') }}'></img> <p class='img_tag'> Crime &nbsp &nbsp Suspicious &nbsp &nbsp  Safe </p>";
+
+	var clase_sospecha = "<img class='violencia_gris' src='{{ url_for('static', filename='img/crimen.png') }}'></img><img class='sospecha' src='{{ url_for('static', filename='img/alerta.png') }}'></img><img class='ok_gris' src='{{ url_for('static', filename='img/ok.png') }}'></img> <p class='img_tag'> Crime &nbsp &nbsp Suspicious &nbsp &nbsp  Safe </p>";
+
+	var clase_none = "<img class='violencia_gris' src='{{ url_for('static', filename='img/crimen.png') }}'></img><img class='sospecha_gris' src='{{ url_for('static', filename='img/alerta.png') }}'></img><img class='ok_gris' src='{{ url_for('static', filename='img/ok.png') }}'></img> <p class='img_tag'> Crime &nbsp &nbsp Suspicious &nbsp &nbsp  Safe </p>";
+
+
+	var ok_gris = "<img class='gris' src='static/img/ok.png' title='Safe'> </img>"
+	var sospecha_gris = "<img class='gris' src='static/img/alerta.png' title='Suspicious'> </img>"
+	var violencia_gris = "<img class='gris' src='static/img/crimen.png' title='Crime'> </img>"
+	var ok_color = "<img class='color' src='static/img/ok.png' title='Safe'> </img>"
+	var sospecha_color = "<img class='color' src='static/img/alerta.png' title='Suspicious'> </img>"
+	var violencia_color = "<img class='color' src='static/img/crimen.png' title='Crime'> </img>"
+
+	videoBoxPlace.innerHTML = "<source src='{{ url_for('static', filename='vid/'+nameVideo) }}' type='video/mp4' />";
+	videoBoxPlace.defaultMuted = true;
+
+	var socket = io.connect('http://localhost:5007/'); /* cambiar la iP de acuerdo a la provista por AWS*/
+	var iteraciones = 0;
+	///////////////////////////////////////
+   	//var cls=document.getElementById("cls");
+	var acc=document.getElementById("acc");
+	///////////////////////////////////////
+	var classVector =[0,0,0];
+	var scoreVector=[0,0,0];
+
+	//broadcast a message
+	socket.on('connect', function() {
+		socket.emit('my event', {
+			data: 'User Connected',
+			i: iteraciones,
+			video: video_name,
+			state: videoBoxPlace.currentTime
+		})
+	})
+	//capture message
+	socket.on('my response', function(msg){
+		var msg = JSON.parse(msg);
+		if (msg.results.status == 1 && !videoBoxPlace.paused){ /* si el video esta listo y no esta pausado*/
+			console.log( msg);
+			iteraciones += 1;
+			var scoreValue = parseInt(msg.results.score);
+			/*console.log("iteracion " + iteraciones);*/
+			if (msg.results.class_name == "sin peligro"){
+				//cls.innerHTML = clase_ok;
+				violencia.innerHTML = violencia_gris;
+				sospecha.innerHTML = sospecha_gris;
+				safe.innerHTML = ok_color;
+				classVector[0] += 1;
+				if (scoreVector[0] < scoreValue){
+					scoreVector[0] = scoreValue;
+				}
+			}
+			else if(msg.results.class_name == "potencialmente sospechoso" ){
+				//cls.innerHTML = clase_sospecha;
+				violencia.innerHTML = violencia_gris;
+				sospecha.innerHTML = sospecha_color;
+				safe.innerHTML = ok_gris;
+				classVector[1] += 1;
+				if (scoreVector[1] < scoreValue){
+					scoreVector[1] = scoreValue;
+				}
+			}
+			else if(msg.results.class_name == "actividad criminal" ){
+				//cls.innerHTML = clase_crimen;
+				violencia.innerHTML = violencia_color;
+				sospecha.innerHTML = sospecha_gris;
+				safe.innerHTML = ok_gris;
+				classVector[2] += 1;
+				if (scoreVector[2] < scoreValue){
+					scoreVector[2] = scoreValue;
+				}
+			}
+			else{
+				cls.innerHTML = clase_none;
+			}
+			/*cls.innerHTML = '<center>'+msg.results.class_name+'</center>';*/
+			acc.innerHTML = '<center>'+msg.results.score + ' %'+'</center>';
+			var limit = msg.results.limit
+			if(iteraciones < limit && !videoBoxPlace.ended){
+				socket.emit('my event', {
+				data: 'User streaming',
+				i: iteraciones,
+				video: video_name,
+				state: videoBoxPlace.currentTime
+			})
+			}
+			else{ /*    ------     condicion si se acaba la clasificacion     ------     */
+				if(classVector[2] > 0){
+					//cls.innerHTML = clase_crimen;
+					violencia.innerHTML = violencia_color;
+					sospecha.innerHTML = sospecha_gris;
+					safe.innerHTML = ok_gris;
+					acc.innerHTML = '<center>'+scoreVector[2]+ ' %'+'</center>';
+				}
+				else{
+					if(classVector[1] > 0){	violencia.innerHTML = violencia_gris;
+											sospecha.innerHTML = sospecha_color;
+											safe.innerHTML = ok_gris;
+											acc.innerHTML = '<center>'+scoreVector[1]+ ' %'+'</center>';}
+					else{ violencia.innerHTML = violencia_gris;
+						sospecha.innerHTML = sospecha_gris;
+						safe.innerHTML = ok_color;
+						acc.innerHTML = '<center>'+scoreVector[0]+ ' %'+'</center>';}
+				}
+				/*acc.innerHTML = '';*/
+				console.log(scoreVector);
+				console.log("fin de programa");
+			}
+		}
+		else{ /*si el video no esta listo o esta pausado*/
+			if(!videoBoxPlace.ended){
+			socket.emit('my event', {
+				data: 'User streaming',
+				i: iteraciones,
+				video: video_name,
+				state: videoBoxPlace.currentTime
+			})
+			}
+			else{ /*    ------     condicion si se acaba la clasificacion     ------     */
+				if(classVector[2] > 0){
+					//cls.innerHTML = clase_crimen;
+					violencia.innerHTML = violencia_color;
+					sospecha.innerHTML = sospecha_gris;
+					safe.innerHTML = ok_gris;
+					acc.innerHTML = '<center>'+scoreVector[2]+ ' %'+'</center>';
+				}
+				else{
+					if(classVector[1] > 0){violencia.innerHTML = violencia_gris;
+											sospecha.innerHTML = sospecha_color;
+											safe.innerHTML = ok_gris;
+											acc.innerHTML = '<center>'+scoreVector[1]+ ' %'+'</center>';}
+					else{ violencia.innerHTML = violencia_gris;
+						sospecha.innerHTML = sospecha_gris;
+						safe.innerHTML = ok_color;
+						acc.innerHTML = '<center>'+scoreVector[0]+ ' %'+'</center>';}
+				}
+				/*acc.innerHTML = '';*/
+				console.log(scoreVector);
+				console.log("fin de programa");
+			}
+		}
+	})
+
+
+</script>
+
+{% endblock %} 

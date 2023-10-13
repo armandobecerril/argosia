@@ -1,0 +1,98 @@
+#experiencia {
+  padding-bottom: 0;
+
+  .carousel {
+		height: 400px;
+    background-color: $orange;
+
+    @media(min-width: 768px) {
+      height: 600px;
+    }
+
+    @media(min-width: 992px) {
+      height: 700px;
+    }
+
+    @media(min-width: 1200px) {
+      height: 900px;
+    }
+
+		.carousel-inner {
+			height: 100%;
+		}
+	}
+
+  .container {
+    position: relative;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .proyecto {
+    position: absolute;
+    display: inline-block;
+    bottom: 0;
+    left: 15px;
+    right: 15px;
+    height: auto;
+    background-color: rgba($orange, 0.8);
+    text-transform: uppercase;
+    color: white;
+    font-size: 32px;
+    padding: 40px 100px 60px 40px;
+    margin: 0;
+
+    .ciudad {
+      font-size: 12px;
+      font-family: $fuente-medium, sans-serif;
+      text-transform: uppercase;
+      position: absolute;
+      right: 30px;
+      bottom: 20px;
+
+      @media(min-width: 768px) {
+          font-size: 16px;
+      }
+
+      @media(min-width: 992px) {
+          font-size: 20px;
+      }
+
+      @media(min-width: 1200px) {
+          font-size: 24px;
+      }
+
+    }
+
+    @media(min-width: 768px) {
+      font-size: 36px;
+      right: auto;
+      width: auto;
+    }
+
+    @media(min-width: 992px) {
+      font-size: 48px;
+    }
+
+    @media(min-width: 1200px) {
+      font-size: 64px;
+
+    }
+  }
+
+  .ciudad {
+
+  }
+
+  .foto-slide {
+    position: absolute;
+  	width: auto;
+  	height: auto;
+  	min-width: 100%;
+  	min-height: 100%;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%,-50%);
+    z-index: 0;
+  }
+}

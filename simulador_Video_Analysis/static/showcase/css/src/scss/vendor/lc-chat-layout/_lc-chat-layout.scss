@@ -1,0 +1,137 @@
+#lc_chat_layout {
+  //height: 400px !important;
+  border-radius: 0 10px 0 0 !important;
+  transition: all ease 0.6s !important;
+
+  &.lc-collapsed {
+    width: 48px !important;
+
+    #lc_chat_title {
+      opacity: 0;
+    }
+
+    #lc_chat_header {
+      background-position: 50% 12px !important;
+    }
+  }
+
+  &.lc-expanded {
+    width: 300px !important;
+
+    #lc_chat_title {
+        opacity: 1;
+    }
+  }
+
+  #lc_chat_header {
+    background-color: $verde !important;
+    border: none !important;
+    border-radius: 0 10px 0 0 !important;
+    box-shadow: none !important;
+  }
+
+  #lc_chat_title {
+    font-family: $fuente-light !important;
+    font-size: 18px !important;
+    @include transicion-basica();
+  }
+
+  #lc_chat_container {
+    border: none !important;
+  }
+
+  #lc_offline_chat_form > p {
+    font-family: $fuente-light !important;
+    font-size: 13px !important;
+    padding: 15px 15px 5px !important;
+  }
+
+  .lc-chat-required {
+    font-family: $fuente-light !important;
+    color: $verde !important;
+  }
+
+  input {
+    height: 48px !important;
+    font-family: $fuente-light !important;
+    font-size: 18px !important;
+    color: $gris-40 !important;
+    border-radius: 0 !important;
+
+    &#lc_chat_offline_name {
+      border-radius: 0 10px 0 0 !important;
+    }
+
+    &:focus {
+      box-shadow: none !important;
+    }
+  }
+
+  textarea {
+    font-family: $fuente-light !important;
+    font-size: 18px !important;
+    line-height: 22px;
+    color: $gris-40 !important;
+    height: 70px !important;
+    border-radius: 0 !important;
+
+    &:focus {
+      box-shadow: none !important;
+    }
+  }
+
+  .lc-offline-message {
+    color: $verde !important;
+    font-family: $fuente-semibold !important;
+  }
+
+  button {
+    display: block !important;
+    height: 48px !important;
+    line-height: 48px !important;
+    background-color: white !important;
+    border-radius: 0 !important;
+    border: 1px solid $verde !important;
+    color: $verde !important;
+    position: relative;
+    z-index: 1;
+  }
+
+  #lc_button_holder {
+    text-align: center;
+    position: relative;
+
+    &:before {
+      pointer-events: none;
+      top:0;
+      left:0;
+      right: 48px;
+      font-family: $fuente-semibold !important;
+      font-size: 18px !important;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      line-height: 48px;
+      display: inline-block;
+      content: 'Enviar';
+      color: $verde;
+      z-index: 2;
+    }
+
+    &:after {
+      pointer-events: none;
+      top: 0;
+      left:42px;
+      font-size: 32px;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      line-height: 48px !important;
+      display: inline-block;
+      content: $icono-arrow-right;
+      color: $verde;
+      z-index: 2;
+      @include icon();
+    }
+  }
+}

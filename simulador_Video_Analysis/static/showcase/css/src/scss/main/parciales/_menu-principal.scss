@@ -1,0 +1,135 @@
+#menu-principal {
+  height: auto;
+
+  .navbar-toggle {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-right: 0;
+
+    .icon-bar {
+      width: 32px;
+      height: 2px;
+      background-color: $orange;
+      margin-top: 10px;
+
+      &:nth-child(2) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  ul {
+    display: block;
+
+    height: auto;
+    list-style: none;
+
+    @media(min-width: 768px) {
+        float: right;
+    }
+
+    ul {
+      position: relative;
+      background-color: white;
+      list-style: none;
+      padding: 0;
+      width: 100%;
+      height: auto;
+      @include transicion-rapida();
+
+      @media(min-width: 768px) {
+        position: absolute;
+        width: auto;
+        opacity: 0;
+        visibility: hidden;
+        background-color: $orange;
+      }
+
+      ul {
+
+          @media(min-width: 768px) {
+            top: 0;
+            left: 100%;
+            background-color: white;
+          }
+
+        a {
+          color: $gray;
+          height: 48px;
+          line-height: 48px;
+          font-family: $fuente-light;
+          font-size: 14px;
+
+          @media(min-width: 768px) {
+            font-family: $fuente-medium;
+            color: $orange;
+            //font-size: 20px;
+          }
+
+          &:hover {
+            color: $gray;
+            background-color: white;
+            height: 50px;
+            line-height: 50px;
+          }
+        }
+      }
+
+      a {
+        display: block;
+        color: $gray;
+        text-align: center;
+        height: 60px;
+        line-height: 60px;
+        text-decoration: none;
+        width: 100%;
+
+
+        @media(min-width: 768px) {
+          width: 200px;
+          color: white;
+          text-align: left;
+        }
+
+        &:hover {
+          background-color: $gray;
+          font-size: 20px;
+          height: 64px;
+          line-height: 64px;
+        }
+      }
+    }
+  }
+
+  li {
+    height: auto;
+    position: relative;
+
+    &:hover {
+
+      > ul {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+
+  a {
+    display: block;
+    padding: 0 20px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: $fuente-medium;
+
+    @media(min-width: 768px) {
+      display: inline-block;
+      text-align: left;
+      height: 112px;
+      line-height: 112px;
+      font-size: 14px;
+    }
+  }
+}

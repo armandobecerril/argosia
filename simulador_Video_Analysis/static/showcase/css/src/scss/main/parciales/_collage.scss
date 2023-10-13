@@ -1,0 +1,90 @@
+#collage {
+  padding: 0;
+
+  .container-fluid {
+    padding: 0;
+    margin: 0;
+  }
+
+  [class*="col-"] {
+    margin: 0;
+    padding: 0;
+  }
+
+  .foto-x, .foto-2x {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .foto-x {
+    height: 200px;
+
+    @media(min-width: 768px) {
+      height: 200px;
+    }
+
+    @media(min-width: 992px) {
+      height: 250px;
+    }
+
+    @media(min-width: 1200px) {
+      height: 300px;
+    }
+  }
+
+  .foto-2x {
+    height: 200px;
+
+    @media(min-width: 768px) {
+      height: 400px;
+    }
+
+    @media(min-width: 992px) {
+      height: 500px;
+    }
+
+    @media(min-width: 1200px) {
+      height: 600px;
+    }
+  }
+
+  img {
+    position: absolute;
+  	width: auto;
+  	height: auto;
+  	min-width: 100%;
+  	min-height: 100%;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%,-50%);
+    z-index: 0;
+  }
+
+  .naranja {
+
+    &:after {
+      display: block;
+      content: '';
+      position: absolute;
+      background-color: rgba($orange, 0.8);
+      z-index: 3;
+      top:0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  .logo {
+    color: white;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    margin-top: -56px;
+    margin-left: -56px;
+    font-size: 112px;
+    z-index: 5;
+  }
+}

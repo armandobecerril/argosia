@@ -1,0 +1,25 @@
+// Escalar título inicial
+
+@mixin escalar-titulo-inicio($factor-conversion: 1) {
+		width:$width-h2_inicio * $factor-conversion;
+		height:$height-h2_inicio * $factor-conversion;
+		margin-left:(($width-h2_inicio * $factor-conversion) / 2) * -1;
+
+		span {
+
+			&:nth-child(1) {
+				font-size:$span1-size * $factor-conversion;
+				top:$span1-top * $factor-conversion;
+				left:$span1-left * $factor-conversion;
+			}
+
+			&:nth-child(2) {
+				font-size:$span2-size * $factor-conversion;
+			}
+
+			&:nth-child(3) {
+				font-size:$span3-size * $factor-conversion;
+				left:$span3-left * $factor-conversion;
+			}
+		}
+}
