@@ -1,0 +1,175 @@
+.form-chatbot {
+  .message {
+    position: relative;
+    display: block;
+    background-color: lighten($corduroy, 52);
+    font-size: 20px;
+    border-radius: 30px 30px 30px 0;
+    padding: 20px 30px;
+    margin-bottom: 30px;
+    height: auto;
+    label {
+      display: none;
+    }
+    textarea {
+      display: block;
+      background-color: transparent;
+      box-shadow: none;
+      font-size: 14px;
+      line-height: 20px;
+      height: auto;
+      @media(min-width: 768px) {
+        font-size: 16px;
+        line-height: 22px;
+      }
+      @media(min-width: 992px) {
+        font-size: 18px;
+        line-height: 24px;
+      }
+      @media(min-width: 1200px) {
+        font-size: 20px;
+        line-height: 26px;
+      }
+    }
+    &:before {
+      position: absolute;
+      left: 0;
+      bottom: -36px;
+      display: block;
+      content: '';
+      width: 0;
+      height: 0;
+      border-top: 36px solid transparent;
+      border-bottom: 36px solid transparent;
+      border-left: 36px solid lighten($corduroy, 52);
+      @media(min-width: 768px) {
+        bottom: -48px;
+        border-top: 48px solid transparent;
+        border-bottom: 48px solid transparent;
+        border-left: 48px solid lighten($corduroy, 52);
+      }
+    }
+    &.answer {
+      border-radius: 30px 30px 0 0;
+      &:after {
+        position: absolute;
+        right:0;
+        bottom: -36px;
+        display: block;
+        content: '';
+        width: 0;
+        height: 0;
+        border-top: 36px solid transparent;
+        border-bottom: 36px solid transparent;
+        border-right: 36px solid lighten($corduroy, 52);
+        @media(min-width: 768px) {
+          bottom: -48px;
+          border-top: 48px solid transparent;
+          border-bottom: 48px solid transparent;
+          border-right: 48px solid lighten($corduroy, 52);
+        }
+      }
+      &.green {
+        background-color: lighten($eastern-blue, 58);
+        textarea {
+          color: $eastern-blue;
+        }
+        &:before {
+          border-left: 36px solid lighten($eastern-blue, 58);
+          @media(min-width: 768px) {
+            border-left: 48px solid lighten($eastern-blue, 58);
+          }
+        }
+        &:after {
+          border-right: 36px solid lighten($eastern-blue, 58);
+          @media(min-width: 768px) {
+            border-right: 48px solid lighten($eastern-blue, 58);
+          }
+        }
+        + .icons {
+          .fill {
+            fill: $eastern-blue;
+          }
+        }
+      }
+      &.violet {
+        background-color: lighten($ship-cove, 40);
+        textarea {
+          color: $ship-cove;
+        }
+        &:before {
+          border-left: 36px solid lighten($ship-cove, 40);
+          @media(min-width: 768px) {
+            border-left: 48px solid lighten($ship-cove, 40);
+          }
+        }
+        &:after {
+          border-right: 36px solid lighten($ship-cove, 40);
+          @media(min-width: 768px) {
+            border-right: 48px solid lighten($ship-cove, 40);
+          }
+        }
+        + .icons {
+          .fill {
+            fill: $ship-cove;
+          }
+        }
+      }
+      &.orange {
+        background-color: lighten($flame-pea, 43);
+        textarea {
+          color: $flame-pea;
+        }
+        &:before {
+          border-left: 36px solid lighten($flame-pea, 43);
+          @media(min-width: 768px) {
+            border-left: 48px solid lighten($flame-pea, 43);
+          }
+        }
+        &:after {
+          border-right: 36px solid lighten($flame-pea, 43);
+          @media(min-width: 768px) {
+            border-right: 48px solid lighten($flame-pea, 43);
+          }
+        }
+        + .icons {
+          .fill {
+            fill: $flame-pea;
+          }
+        }
+      }
+
+    }
+  }
+  .svg {
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    @media(min-width: 768px) {
+      width: 64px;
+      height: 64px;
+    }
+  }
+  .svg-user {
+    text-align: left;
+    .fill {
+      fill: $pistachio;
+    }
+  }
+  .svg-chatbot {
+    text-align: right;
+    .fill {
+      fill: lighten($corduroy, 52);
+    }
+  }
+  .icons {
+    padding-bottom: 10px;
+    border-bottom: 1px lighten($corduroy, 40) solid;
+  }
+  .tit {
+    display: block;
+    padding: 20px 0;
+    text-align: center;
+    color: lighten($corduroy, 30);
+  }
+}

@@ -1,0 +1,46 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot');
+	src:url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		//url('../fonts/icomoon.woff2') format('woff2'),
+		url('../fonts/icomoon.ttf') format('truetype'),
+		url('../fonts/icomoon.woff') format('woff'),
+		url('../fonts/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+[class*="isotype"], [class*="isotipo"], [class^="icon-"], [class*=" icon-"],[class^="icono-"], [class*=" icono-"], [class^="logo-"], [class*=" logo-"], [class^="logo"], [class*=" logo"] {
+	@include icon();
+	@include transicion-basica();
+}
+// Logos
+.isotype:before {
+	content: $isotype;
+}
+.logo-a-1:before {
+	content: $logo-a-1;
+}
+.logo-a-2:after {
+	content: $logo-a-2;
+}
+.logo-b-1:before {
+	content: $logo-b-1;
+}
+.logo-b-2:after {
+	content: $logo-b-2;
+}
+.logo-c-1:before {
+	content: $logo-c-1;
+}
+.logo-c-2:after {
+	content: $logo-c-2;
+}
+.logo-everis-1:before {
+	content: $logo-everis-1;
+}
+.logo-everis-2:after {
+	content: $logo-everis-2;
+}
+.icon-mic:before {
+	content: $icon-mic;
+}

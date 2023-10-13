@@ -1,0 +1,6 @@
+// Escalar título inicial
+
+@mixin rotacion($radio: 0px, $periodo: 100s) {
+	@include transform-origin(50%, $radio);
+	@include animation(spin $periodo infinite linear);
+}

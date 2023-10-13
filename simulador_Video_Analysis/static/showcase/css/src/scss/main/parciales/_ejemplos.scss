@@ -1,0 +1,55 @@
+.examples {
+  em {
+    color: $corduroy;
+  }
+  .example {
+    padding-top: 10px;
+    h4 {
+      font-weight: normal;
+      font-family: $fuente-bold;
+      display: block;
+      text-align: center;
+      font-size: 14px;
+    }
+    .cont {
+      background-color: lighten($corduroy, 53);
+      color: $corduroy;
+      padding: 20px 10px 20px 40px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      ul {
+        padding-left: 0;
+        li {
+          margin-bottom: 8px;
+        }
+      }
+    }
+    &.green {
+      h4 {
+        color: $eastern-blue;
+      }
+      .cont {
+        background-color: lighten($eastern-blue, 58);
+        color: $eastern-blue;
+      }
+    }
+    &.violet {
+      h4 {
+        color: $ship-cove;
+      }
+      .cont {
+        background-color: lighten($ship-cove, 40);
+        color: $ship-cove;
+      }
+    }
+    &.orange {
+      h4 {
+        color: $flame-pea;
+      }
+      .cont {
+        background-color: lighten($flame-pea, 43);
+        color: $flame-pea;
+      }
+    }
+  }
+}

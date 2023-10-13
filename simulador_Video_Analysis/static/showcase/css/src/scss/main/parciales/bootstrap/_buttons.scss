@@ -1,0 +1,289 @@
+//
+// Buttons
+// --------------------------------------------------
+
+
+// Base styles
+// --------------------------------------------------
+
+.btn {
+	font-family: $fuente-bold;
+	text-transform: uppercase;
+	text-shadow:none;
+	box-shadow: none;
+	background-image: none;
+	border:none;
+	padding: 0 25px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 18px;
+	border-radius:25px;
+	letter-spacing: 0.02em;
+	@include transicion-rapida();
+
+	@media(min-width: 768px) {
+		//font-size: 12px;
+
+	}
+
+	&:focus, &:active {
+		outline: none !important;
+	}
+
+	&:hover {
+		padding: 0 18px 0 20px;
+		//letter-spacing: 0.18em;
+		color: white;
+	}
+
+	&.btn-light {
+		border: solid 1px white;
+		color: white;
+		background: transparent;
+	}
+
+	&.icono {
+		//padding-right: 40px;
+		position: relative;
+
+		i {
+			display: inline;
+			position: relative;
+			width: 32px;
+			height: 32px;
+			margin-left: 16px;
+			//background-color: blue;
+
+			@media(min-width: 768px) {
+				width: 36px;
+				height: 36px;
+			}
+
+			&:before {
+				position: absolute;
+				font-size: 32px;
+				line-height: 32px;
+				width: 32px;
+				height: 32px;
+				top: 50%;
+				left: 50%;
+				margin-top: -14px;
+				margin-left: -16px;
+			}
+		}
+
+		&:hover {
+			//padding-right: 46px;
+
+			i {
+				margin-left: 24px;
+				//@include translate(4px, 0);
+			}
+		}
+	}
+
+	&.enviado {
+		opacity: 0.4;
+		pointer-events:none;
+	}
+
+ //    border:none;
+	// background-image: none;
+	// //display:block;
+	// position:relative;
+	// //height:49px;
+	// text-transform:uppercase;
+	// padding:8px 20px;
+	// font-family: $fuente-bold;
+	// text-align:center;
+	// color:#FFF;
+	// text-shadow:#000 0px 1px 0px;
+	// @include border-radius(10px);
+
+	// display: inline-block;
+	// height: 60px;
+	// line-height: 60px;
+	// font-size: 1.8em;
+	// text-align: center;
+	// background-color: $azul;
+	// padding: 0px 16px;
+	// @include transicion-rapida();
+
+	// &.gris {
+	// 	background-color: $gris;
+	// }
+
+	// &.orange {
+	// 	background-color: $orange;
+	// }
+
+
+
+// 	&,
+// 	&:active,
+// 	&.active {
+
+// 		&:focus,
+// 		&.focus {
+
+// 		}
+// 	}
+
+// 	&:hover,
+// 	&:focus,
+// 	&.focus {
+// 		background-color: lighten($azul, 10);
+// 		color: white;
+
+// 		&.gris {
+// 			background-color: lighten($gris, 10);
+// 		}
+
+// 		&.orange {
+// 			background-color: lighten($orange, 10);
+// 		}
+
+// 	}
+
+// 	&:active,
+// 	&.active {
+
+// 	}
+
+// 	&.disabled,
+// 	&[disabled],
+// 	fieldset[disabled] & {
+
+// 	}
+}
+
+// a.btn {
+
+// 	&.disabled,
+// 	fieldset[disabled] & {
+
+// 	}
+// }
+
+// Alternate buttons
+// --------------------------------------------------
+
+.btn-default {
+	border: 1px solid $eastern-blue;
+	color: $eastern-blue;
+	&:hover {
+		border-color: $pistachio;
+		color: $pistachio;
+		background-color: white;
+	}
+}
+
+.btn-primary {
+	background-color: $eastern-blue;
+	color: white;
+
+	&.btn-light {
+		border: solid 1px $eastern-blue;
+		color: $eastern-blue;
+
+		&:hover {
+			color: white;
+		}
+	}
+
+	&:hover {
+		background-color: lighten($eastern-blue, 5);
+	}
+}
+
+.btn-success {
+
+}
+
+.btn-info {
+	background-color: white;
+	border: 1px solid $pistachio;
+	color: $pistachio;
+	&:hover {
+		border-color: $eastern-blue;
+		color: $eastern-blue;
+		background-color: white;
+	}
+}
+
+.btn-warning {
+
+}
+
+.btn-danger {
+
+}
+
+// Link buttons
+// -------------------------
+
+// Make a button look and behave like a link
+
+.btn-link {
+
+	&,
+	&:active,
+	&.active,
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] & {
+
+	}
+
+	&,
+	&:hover,
+	&:focus,
+	&:active {
+
+	}
+
+	&:hover,
+	&:focus {
+
+	}
+
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] & {
+		&:hover,
+		&:focus {
+
+		}
+	}
+}
+
+// Button Sizes
+// --------------------------------------------------
+
+.btn-lg {
+}
+
+.btn-sm {
+}
+
+.btn-xs {
+}
+
+// Block button
+// --------------------------------------------------
+
+.btn-block {
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	&.btn-block {
+
+	}
+}

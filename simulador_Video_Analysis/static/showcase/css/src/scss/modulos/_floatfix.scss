@@ -1,0 +1,7 @@
+@function floatfix($number: 1, $dec: 0, $unit : '' ) {
+	$multiplier : 1;
+	@while $multiplier <= $dec { $multiplier : $multiplier * 10; }
+	$float : ((($number*$multiplier)+$dec)/$multiplier);
+	@if $unit != '' { $float : $float + $unit; }
+	@return $float;
+}

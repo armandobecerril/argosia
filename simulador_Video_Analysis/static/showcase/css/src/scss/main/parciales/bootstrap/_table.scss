@@ -1,0 +1,38 @@
+.table-responsive {
+  padding: 15px;
+  background-color: white;
+  margin-bottom: 10px;
+  border: none;
+
+  + em {
+    font-size: 14px;
+    line-height: 26px;
+    margin-bottom: 10px;
+  }
+}
+
+.table {
+  >thead>tr>th {
+    border-bottom: 1px solid $verde;
+    padding-bottom: 20px;
+    font-size: 18px;
+  }
+
+  th {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: $fuente-semibold;
+  }
+
+  >tbody>tr>td {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 18px;
+  }
+
+  + em {
+    font-size: 14px;
+    line-height: 26px;
+    margin-bottom: 10px;
+  }
+}

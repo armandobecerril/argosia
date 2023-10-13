@@ -1,0 +1,62 @@
+#log-sentimental-analysis {
+  th, td {
+    font-size: 12px;
+    vertical-align: middle;
+    text-align: left;
+    &.golden-grass {
+      color: $golden-grass;
+    }
+    &.corn {
+      color: $corn;
+    }
+    &.flame-pea {
+      color: $flame-pea;
+    }
+    &.sycamore {
+      color: $sycamore;
+    }
+    &.sea-green {
+      color: $sea-green;
+    }
+    &.eastern-blue {
+      color: $eastern-blue;
+    }
+    &.matisse {
+      color: $matisse;
+    }
+    &.prediction {
+      &.golden-grass {
+        background-color: rgba($golden-grass, 0.1);
+      }
+      &.corn {
+        background-color: rgba($corn, 0.1);
+      }
+      &.flame-pea {
+        background-color: rgba($flame-pea, 0.1);
+      }
+      &.sycamore {
+        background-color: rgba($sycamore, 0.1);
+      }
+      &.sea-green {
+        background-color: rgba($sea-green, 0.1);
+      }
+      &.eastern-blue {
+        background-color: rgba($eastern-blue, 0.1);
+      }
+      &.matisse {
+        background-color: rgba($matisse, 0.1);
+      }
+    }
+    &:first-child {
+      width: 220px;
+      color: $corduroy;
+    }
+    &:last-child {
+      width: 80px;
+      color: lighten($corduroy, 20);
+    }
+  }
+  th {
+    font-family: $fuente-bold;
+  }
+}

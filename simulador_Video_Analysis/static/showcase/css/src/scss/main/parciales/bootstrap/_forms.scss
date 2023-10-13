@@ -1,0 +1,215 @@
+// form {
+
+// 	@media(min-width: 768px) {
+
+// 		[class*='col']:first-child {
+// 			padding-right: 4px;
+
+// 			+ [class*='col'] {
+// 				padding-left: 4px;
+// 			}
+// 		}
+
+// 	}
+
+// 	p {
+// 		margin: 0;
+// 	}
+// }
+
+
+// fieldset {
+
+// }
+
+// legend {
+// }
+
+label {
+	font-size: 18px;
+	color: $corduroy;
+	font-weight: normal;
+	font-family: $fuente-bold;
+}
+
+// [type="search"] {
+
+// }
+
+// input[type="radio"],
+// input[type="checkbox"] {
+
+// }
+
+// input[type="file"] {
+
+// }
+
+// input[type="range"] {
+
+// }
+
+// select[multiple],
+// select[size] {
+
+// }
+
+// input[type="file"]:focus,
+// input[type="radio"]:focus,
+// input[type="checkbox"]:focus {
+
+// }
+
+// output {
+
+// }
+
+// .form-control {
+// 	height: 48px;
+// 	@include border-radius(8px);
+// 	background-color: lighten($azul, 50);
+// 	border: solid 1px lighten($azul, 20);
+// 	font-size: 1.4em;
+
+// 	&:focus {
+// 		border: solid 2px $azul;
+// 		box-shadow: none;
+// 	}
+
+// 	&::-ms-expand {
+// 	}
+
+// 	&[disabled],
+// 	&[readonly],
+// 	fieldset[disabled] & {
+
+// 	}
+
+// 	&[disabled],
+//   	fieldset[disabled] & {
+//   	}
+// }
+
+// textarea.form-control {
+
+// }
+
+// input[type="search"] {
+
+// }
+
+// @media screen and (-webkit-min-device-pixel-ratio: 0) {
+
+// 	input[type="date"],
+//   	input[type="time"],
+//   	input[type="datetime-local"],
+//   	input[type="month"] {
+
+//   		&.form-control {
+
+//   		}
+
+//   		&.input-sm,
+//   		.input-group-sm & {
+
+//     	}
+
+//     	&.input-lg,
+//     	.input-group-lg & {
+
+//     	}
+//     }
+// }
+
+.form-group {
+
+	input {
+		height: 50px;
+		line-height: 50px;
+		color: light;
+		border-radius: 0;
+		font-size: 20px;
+		&:focus {
+			border-color: $eastern-blue;
+			box-shadow: none;
+		}
+	}
+
+	textarea {
+		border: none;
+		border-radius: 0;
+		color: light;
+		line-height: 34px;
+		font-size: 20px;
+		font-family: $fuente-light, sans-serif;
+	}
+}
+
+// .radio,
+// .checkbox {
+
+// 	label {
+
+// 	}
+// }
+
+// .radio input[type="radio"],
+// .radio-inline input[type="radio"],
+// .checkbox input[type="checkbox"],
+// .checkbox-inline input[type="checkbox"] {
+
+// }
+
+// .radio + .radio,
+// .checkbox + .checkbox {
+
+// }
+
+// .radio-inline,
+// .checkbox-inline {
+
+// }
+
+// .radio-inline + .radio-inline,
+// .checkbox-inline + .checkbox-inline {
+
+// }
+
+// input[type="radio"],
+// input[type="checkbox"] {
+
+// 	&[disabled],
+// 	&.disabled,
+// 	fieldset[disabled] & {
+
+// 	}
+// }
+
+// .radio-inline,
+// .checkbox-inline {
+
+// 	&.disabled,
+//   	fieldset[disabled] & {
+
+//   }
+// }
+
+// .radio,
+// .checkbox {
+
+// 	&.disabled,
+// 	fieldset[disabled] & {
+
+// 		label {
+
+// 		}
+//   	}
+// }
+
+// .form-control-static {
+
+// 	&.input-lg,
+//   	&.input-sm {
+
+//   	}
+// }

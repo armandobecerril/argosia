@@ -1,0 +1,336 @@
+//
+// Modals
+// --------------------------------------------------
+
+// .modal-open      - body class for killing the scroll
+// .modal           - container to scroll within
+// .modal-dialog    - positioning shell for the actual modal
+// .modal-content   - actual modal w/ bg and corners and shit
+
+
+// Kill the scroll on the body
+
+.modal-open {
+
+}
+
+
+
+
+
+
+
+
+// Container that the modal scrolls within
+
+.modal {
+	padding-right: 0 !important;
+	overflow: hidden !important;
+	//background-color: $negro;
+
+	h2 {
+		display: block;
+		//color: $verde;
+		font-family: $fuente-light;
+		padding-right: 50px;
+		font-size: 1.2em;
+		margin-top: 0;
+		line-height: 1.2em;
+		margin-bottom: 10px;
+
+		@media(min-width: 768px) {
+			padding-right: 0;
+			font-size: 2.2em;
+			margin-top: 30px;
+			margin-bottom: 20px;
+		}
+	}
+
+	h1, h2, h3, h4 {
+		color: white;
+	}
+
+	// h3 {
+	// 	font-family: $fuente;
+	// 	font-size: 14px;
+	// 	margin:5px 0 10px;
+
+	// 	@media(min-width: 768px) {
+	// 		font-size: 24px;
+	// 		margin:20px 0 10px;
+	// 	}
+	// }
+
+
+	// When fading in the modal, animate it to slide down
+
+	&.fade .modal-dialog {
+
+	}
+
+	&.in .modal-dialog {
+
+	}
+}
+
+.modal-open .modal {
+
+}
+
+
+// Shell div to position the modal with bottom padding
+
+.modal-dialog.full {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	.lateral {
+		background-image: url(../img/pattern.png);
+	}
+	.central {
+		.exit {
+			display: block;
+			cursor: pointer;
+			position: absolute;
+			top: 24px;
+			right: 24px;
+			font-size: 0;
+			width: auto;
+			height: auto;
+			z-index: 20;
+			svg {
+				width: 32px;
+				height: 32px;
+				pointer-events: none;
+				@media(min-width: 768px) {
+					width: 40px;
+					height: 40px;
+				}
+				@media(min-width: 992px) {
+					width: 48px;
+					height: 48px;
+				}
+				@media(min-width: 1200px) {
+					width: 64px;
+					height: 64px;
+				}
+				path {
+					fill:none;
+					stroke-width:16px;
+					 stroke: lighten($corduroy, 30);
+					 @media(min-width: 768px) {
+						 stroke-width:12px;
+					 }
+					 @media(min-width: 992px) {
+						 stroke-width:10px;
+					 }
+					 @media(min-width: 1200px) {
+						 stroke-width:8px;
+					 }
+				}
+			}
+		}
+		h2 {
+			color: $eastern-blue;
+			text-transform: capitalize;
+			font-weight: normal;
+			font-family: $fuente-medium;
+			font-size: 36px;
+			@media(min-width: 768px) {
+				font-size: 40px;
+			}
+			@media(min-width: 992px) {
+				font-size: 44px;
+			}
+			@media(min-width: 1200px) {
+				font-size: 48px;
+			}
+		}
+	}
+}
+
+
+// Actual modal
+
+.modal-content {
+	//background-color: $negro;
+	//border: 1px rgba($gris-60, $opacidad-20) solid;
+	box-shadow: none;
+	border-radius:0 16px 0 0;
+	height: auto;
+	min-height: 100%;
+	border-radius: 0;
+	@include transicion-rapida();
+	text-align: center;
+
+	@media(min-width: 768px) {
+		text-align: left;
+	}
+
+	p {
+		margin: 20px 0;
+		//color: $gris-60;
+	}
+
+	img {
+		display: block;
+		margin: 40px auto;
+	}
+}
+
+
+// Modal background
+
+.modal-backdrop {
+	background-color: transparent;
+
+	&.in {
+		opacity:1;
+		//background-color: rgba($negro, $opacidad-90);
+		//background-image: url(../img/textura.png);
+		background-repeat: repeat;
+	}
+}
+
+
+// Modal header
+// Top section of the modal w/ title and dismiss
+
+.modal-header {
+	border:none;
+	padding: 0;
+	line-height: 54px;
+
+	.icono-salir {
+		text-shadow:none;
+		font-size: 24px;
+	}
+
+}
+
+
+// Close icon
+
+.modal-header .close {
+
+}
+
+.close {
+	position: absolute;
+	width: 30px;
+	height: 48px;
+	//border-right: 1px rgba($gris-60, $opacidad-20) solid !important;
+	//border-bottom: 1px rgba($gris-60, $opacidad-20) solid !important;
+	//border-left: 1px rgba($gris-60, $opacidad-20) solid !important;
+	top: 2px;
+	right: 16px;
+	font-size: 3em;
+	line-height: 48px;
+	font-family: $fuente-semibold;
+	//color: $verde;
+	text-align: center;
+	opacity:1;
+	z-index: 5;
+	@include transicion-rapida();
+
+	&:hover {
+		opacity:1;
+		height: 56px;
+		//color: lighten($verde, 10);
+	}
+}
+
+
+// Title text within header
+
+.modal-title {
+	display: block;
+	height: 48px;
+	line-height: 54px;
+	font-size: 12px;
+	letter-spacing: 0.3em;
+	text-align: center;
+	font-family: $fuente-semibold;
+	//color: $gris-20 !important;
+	text-transform: uppercase;
+
+	@media(min-width: 768px) {
+		letter-spacing: 0.4em;
+	}
+}
+
+
+// Modal body
+// Where all modal content resides (sibling of .modal-header and .modal-footer)
+
+.modal-body {
+	padding: 15px 15px 30px;
+	@include transicion-rapida();
+
+	@media(min-width: 768px) {
+		padding: 15px 30px 30px;
+	}
+}
+
+
+// Footer (for actions)
+
+.modal-footer {
+
+
+	// Properly space out buttons
+
+	.btn + .btn {
+
+	}
+
+
+	// but override that for button groups
+
+	.btn-group .btn + .btn {
+
+	}
+
+
+	// and override it for block buttons as well
+
+	.btn-block + .btn-block {
+
+	}
+}
+
+
+// Measure scrollbar width for padding body during modal show/hide
+
+.modal-scrollbar-measure {
+
+}
+
+
+// Scale up the modal
+
+@media (min-width: 768px) {
+
+	// Automatically set modal's width for larger viewports
+
+	.modal-dialog {
+
+	}
+
+	.modal-content {
+
+	}
+
+	// Modal sizes
+
+	.modal-sm {
+
+	}
+}
+
+@media (min-width: 992px) {
+
+	.modal-lg {
+	}
+}

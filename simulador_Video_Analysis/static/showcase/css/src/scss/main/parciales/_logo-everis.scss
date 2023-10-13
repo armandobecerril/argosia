@@ -1,0 +1,19 @@
+#logo-everis {
+  display: inline-block;
+  position: relative;
+  font-size: 170px;
+  width: 170px;
+  height: 100px;
+  &:before, &:after {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -85px;
+  }
+  &:before {
+    color: $pistachio;
+  }
+  &:after {
+    color:$corduroy;
+  }
+}

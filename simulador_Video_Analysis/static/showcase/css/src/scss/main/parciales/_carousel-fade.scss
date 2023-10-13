@@ -1,0 +1,20 @@
+.carousel-fade {
+  .carousel-inner {
+    .item {
+      opacity: 0;
+      transition-property: opacity;
+      height: 100%;
+    }
+    .active {
+      opacity: 1;
+      &.left, &.right {
+        left: 0;
+        opacity: 0;
+        z-index: 1;
+      }
+    }
+    .next.left, .active.right {
+      opacity: 1;
+    }
+  }
+}
